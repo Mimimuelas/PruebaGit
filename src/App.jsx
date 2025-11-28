@@ -1,32 +1,42 @@
 import { useState } from "react";
-import InputGasto from "./components/InputGasto"; // Ajusta la ruta si es necesario
-import ListaGastos from "./screens/ListaGastos";
 import "./App.css";
+
+// --- AQUÍ ESTÁ EL ARREGLO ---
+// Quitamos las llaves { } porque InputGasto se exporta como "default"
+import InputGasto from "./components/InputGasto/InputGasto"; 
+
+import ListaGastos from "./screens/ListaGastos";
+// import Dashboard from "./components/Dashboard/Dashboard"; // Descomenta esto si ya creaste el Dashboard
 
 function App() {
   const [gastos, setGastos] = useState([]);
 
   const handleAddGasto = (nuevoGasto) => {
-    // 1. Creamos un nuevo objeto que incluye todo lo del form + un ID único
     const gastoConId = {
       ...nuevoGasto,
-      id: crypto.randomUUID() // O usa Date.now() si prefieres algo simple
+      id: crypto.randomUUID(), // Genera un ID único
+      monto: Number(nuevoGasto.monto) // Asegura que se guarde como número
     };
-
-    // 2. Guardamos en el estado
+    
     setGastos([...gastos, gastoConId]);
   };
 
   return (
-    <>
-      <h1>Lista de Gastos</h1>
+    <div style={{ maxWidth: '600px', margin: '0 auto', padding: '20px' }}>
       
-      {/* El formulario envía los datos sin ID */}
-      <InputGasto onSubmit={handleAddGasto} />
+      <h1 style={{ textAlign: 'center', color: '#334155' }}>OrdenaTuPlata 💰</h1>
+      
+      {/* <Dashboard gastos={gastos} /> */}
 
-      {/* La lista recibe los datos CON ID y propiedades correctas */}
+      {/* Formulario */}
+      <div style={{ marginTop: 20 }}>
+         <InputGasto onSubmit={handleAddGasto} />
+      </div>
+
+      {/* Lista */}
       <ListaGastos gastos={gastos} />
-    </>
+      
+    </div>
   );
 }
 
