@@ -1,17 +1,94 @@
-/* Estilos Globales */
-body {
-    margin: 3px;
-    font-family: -apple-system; /* Fuente del sistema para mejor rendimiento y apariencia nativa */
-    -webkit-font-smoothing: antialiased; /* Mejora la suavidad de las fuentes en WebKit tambien para que se vea mas moderno*/
-}
-
-/* Estilos para el contenedor de la Pantalla de Login */
+/* Estilos para el contenedor de la Pantalla de Login (ya existente) */
 .login-container {
-    background: #1c1b1b; 
-    min-height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
+    background: #1c1b1b; /* Fondo oscuro casi negro */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding: 35px;
+    color: #ffffff; /* Color de texto blanco general */
+}
+
+/* Estilos para el Header y Título */
+.header-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.main-title {
+    color: #5d9cec; /* Un azul brillante para el título principal */
+    font-size: 2em;
+    font-weight: 700;
+    margin-top: 10px;
+}
+
+/* Estilos para la Caja de Formulario (la caja blanca) */
+.form-box {
+    background: #2a2a2a; /* Fondo gris oscuro para la caja */
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5); /* Sombra para que destaque */
+    width: 100%;
+    max-width: 400px; /* Limita el ancho en pantallas grandes */
+    box-sizing: border-box;
+}
+
+.welcome-title {
+    color: #f7f7f7; /* Título de bienvenida blanco */
+    font-size: 1.5em;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Estilos para los Inputs del Formulario */
+.login-form input.input-field {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #444444; /* Borde gris más oscuro */
+    border-radius: 8px;
+    box-sizing: border-box;
+    background-color: #383838; /* Fondo de input aún más oscuro */
+    color: #e0e0e0; /* Texto del input claro */
+    font-size: 1em;
+}
+
+.login-form input.input-field:focus {
+    border-color: #5d9cec; /* Borde azul al enfocar */
+    outline: none;
+}
+
+/* Estilos para el Botón de Iniciar Sesión */
+.login-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #5d9cec; /* Color principal de marca: Azul */
+    color: white;
+    font-size: 1.1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.login-button:hover {
+    background-color: #4280c4; /* Un azul un poco más oscuro al pasar el ratón */
+}
+
+/* Estilos para el Enlace de Olvido de Contraseña */
+.forgot-password-link {
+    display: block;
+    text-align: center;
+    margin-top: 25px;
+    color: #999999; /* Gris suave para el enlace */
+    text-decoration: none;
+    font-size: 0.9em;
+}
+
+.forgot-password-link:hover {
+    color: #ffffff;
+    text-decoration: underline;
 }
