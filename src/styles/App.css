@@ -1,0 +1,17 @@
+/* Estilos Globales */
+body {
+    margin: 3px;
+    font-family: -apple-system; /* Fuente del sistema para mejor rendimiento y apariencia nativa */
+    -webkit-font-smoothing: antialiased; /* Mejora la suavidad de las fuentes en WebKit tambien para que se vea mas moderno*/
+}
+
+/* Estilos para el contenedor de la Pantalla de Login */
+.login-container {
+    background: #1c1b1b; 
+    min-height: 100vh; /* Asegura que ocupe toda la altura de la ventana */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 35px;
+}
