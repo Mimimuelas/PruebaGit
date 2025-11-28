@@ -1,13 +1,8 @@
-import { useState } from "react";
-import "./App.css";
-
-// --- AQUÍ ESTÁ EL ARREGLO ---
-// Quitamos las llaves { } porque InputGasto se exporta como "default"
-import InputGasto from "./components/InputGasto/InputGasto"; 
-
-import ListaGastos from "./screens/ListaGastos";
-// import Dashboard from "./components/Dashboard/Dashboard"; // Descomenta esto si ya creaste el Dashboard
-
+import { useState } from 'react';
+import './styles/App.css'; // <-- RUTA CORREGIDA (1)
+import LoginScreen from './screens/LoginScreen.jsx'; 
+import InputGasto from "./components/InputGasto/InputGasto.tsx"; // <-- RUTA CORREGIDA (2)
+import ListaGastos from "./screens/ListaGastos.tsx"; // <-- RUTA CORREGIDA (3)
 function App() {
   const [gastos, setGastos] = useState([]);
 
@@ -21,23 +16,19 @@ function App() {
     setGastos([...gastos, gastoConId]);
   };
 
-  return (
+return (
     <div style={{ maxWidth: '600px', margin: '0 auto', padding: '20px' }}>
-      
-      <h1 style={{ textAlign: 'center', color: '#334155' }}>OrdenaTuPlata 💰</h1>
-      
-      {/* <Dashboard gastos={gastos} /> */}
+        <LoginScreen />
+        <InputGasto onSubmit={handleAddGasto} /> 
+    <ListaGastos gastos={gastos} />
 
-      {/* Formulario */}
-      <div style={{ marginTop: 20 }}>
-         <InputGasto onSubmit={handleAddGasto} />
-      </div>
-
-      {/* Lista */}
-      <ListaGastos gastos={gastos} />
-      
+        {/* CÓDIGO DE GASTOS: */}
+        <h1 style={{ textAlign: 'center', color: '#334155' }}>💰OrdenaTuPlata</h1>
+        <div style={{ margin: 'auto' }}>
+            {/* ... aquí estará el InputGasto y ListaGastos ... */}
+        </div>
     </div>
-  );
+);
 }
 
 export default App;

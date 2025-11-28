@@ -1,21 +1,16 @@
-# React + Vite
+# ORDENA TU PLATA
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Muchas personas entre los 36 y 45 años no saben realmente en qué se les va el dinero cada mes. No es falta de ingresos, sino de organización: comida, transporte, deudas y entretenimiento se mezclan sin control, generando estrés, deudas y hasta conflictos familiares. Nuestra app llega para resolver este problema, ayudando a categorizar cada gasto de forma simple y visual, para que las personas recuperen el control de su dinero y su tranquilidad financiera.
 
-Currently, two official plugins are available:
+- Lenguaje sencillo
+- Facil de usar
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## SCREEN 1 -[LOGIN BIENVENIDA]-
 
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+La primera screen sera estala cual sera donde esta parte del logo y el recuadro con el login.
 
 ## Expanding the ESLint configuration
 
 If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
 
 Se creo un nuevo componente en este caso fue insertar un nuevo gasto y que este se conecte con la lista y puedan ser guardados
-
-
-Se creo una screen la cual contiene el formulario de agregar gasto y categorizarlos guardandolo en una lista que dependiendo la categoria contiene un color diferente
