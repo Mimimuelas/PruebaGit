@@ -1,35 +1,33 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import InputGasto from "./components/InputGasto"; // Ajusta la ruta si es necesario
+import ListaGastos from "./screens/ListaGastos";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [gastos, setGastos] = useState([]);
+
+  const handleAddGasto = (nuevoGasto) => {
+    // 1. Creamos un nuevo objeto que incluye todo lo del form + un ID único
+    const gastoConId = {
+      ...nuevoGasto,
+      id: crypto.randomUUID() // O usa Date.now() si prefieres algo simple
+    };
+
+    // 2. Guardamos en el estado
+    setGastos([...gastos, gastoConId]);
+  };
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>Lista de Gastos</h1>
+      
+      {/* El formulario envía los datos sin ID */}
+      <InputGasto onSubmit={handleAddGasto} />
+
+      {/* La lista recibe los datos CON ID y propiedades correctas */}
+      <ListaGastos gastos={gastos} />
     </>
-  )
+  );
 }
 
-export default App
+export default App;
